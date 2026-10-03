@@ -1,0 +1,32 @@
+:root{
+  box-sizing:border-box;
+  --bg:#fde7ec; --ink:#3b1230; --muted:#8a5c78; --card:#fffafb; --edge:#f1b9c8; --accent:#c2275a; --gold:#e8a93a;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#1f0c1c;--ink:#fbe3ea;--muted:#c79ab0;--card:#3a1531;--edge:#6a2b58;--accent:#ff7aa2;--gold:#f2b84b}
+}
+:root[data-theme="dark"]{--bg:#1f0c1c;--ink:#fbe3ea;--muted:#c79ab0;--card:#3a1531;--edge:#6a2b58;--accent:#ff7aa2;--gold:#f2b84b}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;overflow:hidden}
+.hand{font-family:'Caveat','Segoe Script',cursive}
+.screen{width:100%;max-width:420px;text-align:center;display:none}
+.screen.on{display:block}
+h1{font-size:clamp(2.6rem,11vw,3.6rem);line-height:1.05;margin:0 0 12px;font-weight:700}
+.sub{color:var(--muted);margin:0 0 28px;line-height:1.5}
+button{font:inherit;font-weight:500;cursor:pointer;border:0;border-radius:999px;padding:14px 28px;background:var(--accent);color:#fff;font-size:1rem}
+button.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+button:focus-visible,.card:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.stack{position:relative;width:100%;aspect-ratio:3/3.6;margin:0 auto 22px}
+.card,.under{position:absolute;inset:0;border-radius:22px;background:var(--card);border:1.5px solid var(--edge)}
+.under.a{transform:translateY(10px) scale(.96);opacity:.7}
+.under.b{transform:translateY(20px) scale(.92);opacity:.4}
+.card{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;cursor:pointer;transition:transform .5s ease,opacity .5s ease;user-select:none}
+.card.out{transform:translateX(-120%) rotate(-12deg);opacity:0}
+.card .q{font-size:2.1rem;line-height:1.2;font-weight:500}
+.card .n{position:absolute;top:16px;right:20px;color:var(--muted);font-size:.9rem}
+.heart{color:var(--gold);font-size:1.6rem;margin-bottom:10px}
+.hint{color:var(--muted);font-size:.9rem;margin:0 0 18px}
+.end .heart{font-size:3rem}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motivos pelos quais eu te amo</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="meuamor.css">
+</head>
+<body>
+
+<section class="screen on" id="start">
+  <div class="heart">♥</div>
+  <h1 class="hand">Para <span id="nome"></span></h1>
+  <p class="sub">São só alguns dos motivos pelos quais eu te amo.</p>
+  <button id="open">Abrir</button>
+</section>
+
+<section class="screen" id="deck">
+  <div class="stack">
+    <div class="under b"></div><div class="under a"></div>
+    <div class="card" id="card" tabindex="0" role="button" aria-label="Mostrar o próximo motivo">
+      <span class="n" id="count"></span>
+      <div class="q hand" id="text"></div>
+    </div>
+  </div>
+  <p class="hint">Toque no cartão para ver o próximo</p>
+  <button class="ghost" id="next">Próximo motivo</button>
+</section>
+
+<section class="screen end" id="end">
+  <div class="heart">♥</div>
+  <h1 class="hand" id="final"></h1>
+  <p class="sub" id="finalSub"></p>
+  <button id="again">Ler de novo</button>
+</section>
+
+<script src="meuamor.js"></script>
+</body>
+</html>
